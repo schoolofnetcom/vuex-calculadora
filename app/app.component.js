@@ -13,6 +13,17 @@ export default{
         'result-component': ResultComponent,
         'numbers-component': NumbersComponent,
         'commands-component': CommandsComponent
+    },
+    events: {
+        ADD_ELEMENT(element){
+            this.inline += element;
+        },
+        RESULT(){
+            this.inline = eval(this.inline) + "";
+        },
+        CLEAR(){
+            this.inline = "";
+        }
     }
 }
 

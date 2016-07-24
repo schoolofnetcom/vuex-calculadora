@@ -8,15 +8,15 @@ export default {
     },
     methods: {
         addOperator(operator){
-            this.$parent.inline += operator;
+            this.$dispatch('ADD_ELEMENT',operator);
         },
         callCommand(command){
             switch (command){
                 case '=':
-                    this.$parent.inline = eval(this.$parent.inline) + "";
+                    this.$dispatch('RESULT');
                     break;
                 case 'C':
-                    this.$parent.inline = "";
+                    this.$dispatch('CLEAR');
                     break;
             }
         }

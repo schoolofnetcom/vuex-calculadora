@@ -7,7 +7,7 @@ export default {
     },
     methods: {
         addNumber(number){
-            this.$parent.inline += number;
+            this.$dispatch('ADD_ELEMENT',number);
         }
     }
 }
