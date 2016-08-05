@@ -6,18 +6,20 @@ export default {
             commands: ['=', 'C']
         };
     },
-    methods: {
-        addOperator(operator){
-            this.$dispatch('ADD_ELEMENT',operator);
-        },
-        callCommand(command){
-            switch (command){
-                case '=':
-                    this.$dispatch('RESULT');
-                    break;
-                case 'C':
-                    this.$dispatch('CLEAR');
-                    break;
+    vuex: {
+        actions: {
+            addOperator(state,operator){
+                state.dispatch('ADD_ELEMENT',operator);
+            },
+            callCommand(state,command){
+                switch (command){
+                    case '=':
+                        state.dispatch('RESULT');
+                        break;
+                    case 'C':
+                        state.dispatch('CLEAR');
+                        break;
+                }
             }
         }
     }
